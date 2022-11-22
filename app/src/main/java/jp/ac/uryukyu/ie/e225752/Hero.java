@@ -14,21 +14,34 @@ public class Hero {
     private int attack;
     private boolean dead;
 
+    /**
+     * private String Nameを取得するメソッド
+     */
     public String getName(){
         return this.name;
     }
 
+    /**
+     * private int hitPointを取得するメソッド
+     */
     public int getHitPoint(){
         return this.hitPoint;
     }
 
+    /**
+     * private int attackを取得するメソッド
+     */
     public int getAttack(){
         return this.attack;
     }
 
+    /**
+     * private boolean deadを取得するメソッド
+     */
     public boolean Dead_status(){
         return this.dead;
     }
+    
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
      * @param name ヒーロー名
@@ -43,15 +56,23 @@ public class Hero {
         this.dead = false;
         System.out.printf("q%sのHPは%d。攻撃力は%dです。\n", _name, _maximumHP, _attack);
     }
-
+    /**
+     * private String nameを代入するメソッド
+     */
     public void setName(String _name){
         this.name = _name;
     }
 
+    /**
+     * private int hitPointを代入するメソッド
+     */
     public void setHitPoint(int _maximumHP){
         this.hitPoint = _maximumHP;
     }
 
+    /**
+     * private int attackを代入するメソッド
+     */
     public void setAttack(int _attack){
         this.attack = _attack;
     }

@@ -21,22 +21,34 @@ public class Enemy {
      * @param attack モンスターの攻撃力
      */
 
+    /*
+     * private String Nameを取得するメソッド
+     */
     public String getName(){
         return this.name;
     }
 
+    /**
+     * @retrun private int hitPointを取得するメソッド
+     */
     public int getHitPoint(){
         return this.hitPoint;
     }
 
+    /**
+     * @retrun private int attackを取得するメソッド
+     */
     public int getAttack(){
         return this.attack;
     }
 
+    /**
+     * @retrun private boolean deadを取得するメソッド
+     */
     public boolean Dead_status(){
         return this.dead;
     }
-
+    
     public Enemy (String _name, int _maximumHP, int _attack) {
         this.setName(_name);
         this.setHitPoint(_maximumHP);
@@ -44,14 +56,22 @@ public class Enemy {
         this.dead = false;
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", _name, _maximumHP, _attack);
     }
+    /**
+     * @param _name String型変数nameに代入する値
+     */
     public void setName(String _name){
         this.name = _name;
     }
- 
+    
+    /**
+     * @param _maximumHP int型変数hitPointに代入する値
+     */
     public void setHitPoint(int _maximumHP){
         this.hitPoint = _maximumHP;
     }                                                                               
-
+    /**
+     * @param _attack int型変数attackに代入する値
+     */
     public void setAttack(int _attack){
         this.attack = _attack;
     }
@@ -61,9 +81,11 @@ public class Enemy {
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
-        int damage = (int)(Math.random() * this.getAttack());
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", this.getName(), hero.getName(), damage);
-        hero.wounded(damage);
+        if (this.dead == false){
+            int damage = (int)(Math.random() * this.getAttack());
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", this.getName(), hero.getName(), damage);
+            hero.wounded(damage);
+            }
     }
 
     /**
